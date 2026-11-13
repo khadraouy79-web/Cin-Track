@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="./script.js" defer></script>
+    <script type="module" src="./script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>CinéTrack.com</title>
 </head>
@@ -25,24 +25,26 @@
 
 <header class="sticky justify-center flex-col ">
 
-<section class="navigationAll flex justify-between  pr-6">
+<section class="navigationAll flex flex-col md:flex-row items-center justify-between gap-4 p-4">
 
 <div>
   <nav class="navigation ">
-    <ul class = "menu  justify-center items-center flex">
+    <ul class = "menu  flex flex-wrap justify-center items-center gap-3">
 
-        <li><a href="#" class="text-white mx-4 text-[25px] font-[Monoton] transition-all duration-300 ease-in-out hover:text-[#e70634] hover:text-[30px]">Home</a></li>
-        <li><a href="#" class="text-white mx-4 text-[25px] font-[Monoton] transition-all duration-300 ease-in-out hover:text-[#e70634] hover:text-[30px]">Series</a></li>
-        <li><a href="#" class="text-white mx-4 text-[25px] font-[Monoton] transition-all duration-300 ease-in-out hover:text-[#e70634] hover:text-[30px]">Movies</a></li>
+        <li><a id="Home" href="#" class="text-white font-[Monoton] transition-all duration-300 ease-in-out hover:text-[#e70634] active text-lg sm:text-2xl">Home</a></li>
+        <li><a id="series" href="#" class="text-white font-[Monoton] transition-all duration-300 ease-in-out hover:text-[#e70634] text-lg sm:text-2xl">Series</a></li>
+        <li><a id="Movies" href="#" class="text-white font-[Monoton] transition-all duration-300 ease-in-out hover:text-[#e70634] text-lg sm:text-2xl">Movies</a></li>
     </ul>
   </nav>
 
 </div>
-      <input type="search" id="searshBar" class="w-[400px] mt-2 rounded-xl opacity-50 " placeholder=" searsh ">
+      <input type="search" id="searshBar" class="w-full md:w-72 lg:w-[400px] mt-[10px] bg-transparent placeholder:text-slate-400 text-white text-sm border border-white rounded-md pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow " placeholder=" searsh... ">
 
 </section>
 
-<h1 class="logo " ><img src="img/Logo.png"></h1>
+<h1 class="logo " >
+  <img src="img/Logo.png" class="max-w-full h-auto mx-auto" alt="CinéTrack">
+</h1>
 
 
 </header>
@@ -50,17 +52,17 @@
 <main >
 
 <div>
-<div class="flex">
-
-
-<div class="flex">
+<div>
+<div class="flex flex-col lg:flex-row items-start gap-6 p-4 sm:p-6">
 <section
   id="cardsContainer"
-  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+  class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 w-full min-w-0 flex-1">
 </section>
 
-<aside class ="bg-black w-[300px] shrink-0 rounded-xl mt-[22px] opacity-65">
+<aside class ="bg-black w-full lg:w-[280px] shrink-0 rounded-xl opacity-65 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto">
   <h2 class ="text-white ml-[20px] p-4 text-xl font-bold">favorite shows ❤️</h2>
+  <div id="favoriteCard" class="grid col-span-1 gap-2 p-2">
+  </div>
 </aside>
 
 </div>
@@ -98,10 +100,10 @@
 
  <nav class="pagination flex justify-center gap-4">
 
-      <button id="prevBtn" class="btn1  bg-white rounded-xl text-xl " > prev </button>
-      <ul id="pagination" class="flex text-white justify-between font-bold"></ul>
-      <span id="page-numbers" class="bg-white rounded-xl text-xl"></span>
-      <button id="nextBtn" class="btn2  bg-white rounded-xl text-xl">next  </button>
+      <button id="prevBtn" class="btn1  bg-red-600 p-2 text-xl font-bold rounded-xl  hover:bg-red-800 " > prev </button>
+      
+      <span id="page-numbers" class="bg-red-600 p-2 text-xl font-bold rounded-xl  hover:bg-red-800"></span>
+      <button id="nextBtn" class="btn2 bg-red-600 p-2 text-xl font-bold rounded-xl  hover:bg-red-800">next  </button>
       
 
     

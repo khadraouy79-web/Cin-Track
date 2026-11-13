@@ -136,3 +136,23 @@ footer {
     display: grid;
     font-size: 20px;
 }
+
+.movie-card:active:not(:has(button:active)) {
+  transform: scale(0.95);
+}
+
+#Home:hover,
+#series:hover,
+#Movies:hover {
+  color: #e70634;
+}
+
+#Home.active,
+#series.active,
+#Movies.active {
+  color: #e70634;
+  border-bottom: 2px solid #e70634;
+  padding-bottom: 5px;
+}
+
+
