@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background-container {
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+.background-container div{
+    position: absolute;
+    border-radius: 3rem;
+    animation: gradient 4s infinite;
+
+}
+
+@keyframes gradient{
+    50%{
+    transform: scale(1.3)translate(100px)
+    }
+}
+
+.background-container div:nth-child(1){
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+}
+
+.background-container div:nth-child(2){
+    height: 80%;
+    width: 70%;
+    background-color: #000000;
+    top: -12%;
+    right: -12%;
+    animation-delay: 2s;
+}
+
+.background-container div:nth-child(3){
+    height: 50%;
+    width: 75%;
+    background-color: #900e0e;
+    left: -5%;
+    animation-delay: 1s;
+}
+
+.background-container div:nth-child(4){
+    height: 65%;
+    width: 80%;
+    background-color: #000000;
+    bottom: -15%;
+    right: -20%;
+    animation-delay: 3s;
+}
+
+.background-container div:nth-child(5){
+    height: 70%;
+    width: 65%;
+    background-color: #eb1313;
+    bottom: 0;
+    right: -50%;
+    animation-delay: 1s;
+}
+
+.background-container::after{
+    position: absolute;
+    content: "";
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(200px);
+     -webkit-backdrop-filter: blur(200px);
+}
+
+
+body {
+    min-height: 100vh;
+    background-color: #111;
+}
+
+.background-container {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.background-container div {
+    position: absolute;
+    border-radius: 3rem;
+    animation: gradient 4s infinite ease-in-out;
+}
+
+@keyframes gradient {
+    50% {
+        transform: scale(1.3) translateX(100px);
+    }
+}
+
+.background-container::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    backdrop-filter: blur(200px);
+    -webkit-backdrop-filter: blur(200px);
+}
+
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.navigation{
+    display: flex;
+}
+
+
+.girdContainer {
+    display: grid;
+
+    background-color: #fff;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    display: grid;
+    font-size: 20px;
+}
